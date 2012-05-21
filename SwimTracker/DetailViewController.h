@@ -6,12 +6,14 @@
     <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
 {
     __weak IBOutlet UITextField *nameField;
-    __weak IBOutlet UITextField *serialNumberField;
-    __weak IBOutlet UITextField *valueField;
+//    __weak IBOutlet UITextField *poolField;
+    __weak IBOutlet UITextField *timeField;
     __weak IBOutlet UILabel *dateLabel;
     __weak IBOutlet UIImageView *imageView;
 
-    __weak IBOutlet UIButton *assetTypeButton;
+    __weak IBOutlet UIButton *eventTypeButton;
+    __weak IBOutlet UIButton *distanceTypeButton;
+    __weak IBOutlet UIButton *poolTypeButton;
     UIPopoverController *imagePickerPopover;
 }
 
@@ -23,6 +25,8 @@
 
 - (IBAction)takePicture:(id)sender;
 - (IBAction)backgroundTapped:(id)sender;
-- (IBAction)showAssetTypePicker:(id)sender;
+- (IBAction)showEventTypePicker:(id)sender;
+- (IBAction)showDistanceTypePicker:(id)sender;
+- (IBAction)showPoolTypePicker:(id)sender;
 
 @end

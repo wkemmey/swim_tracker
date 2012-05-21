@@ -2,7 +2,9 @@
 #import "Item.h"
 #import "ImageStore.h"
 #import "ItemStore.h"
-#import "AssetTypePicker.h"
+#import "EventTypePicker.h"
+#import "DistanceTypePicker.h"
+#import "PoolTypePicker.h"
 
 
 @implementation DetailViewController
@@ -64,9 +66,9 @@
 {
     [super viewWillAppear:animated];
 
-    [nameField setText:[item itemName]];
-    [serialNumberField setText:[item serialNumber]];
-    [valueField setText:[NSString stringWithFormat:@"%d", [item valueInDollars]]];
+    //[nameField setText:[item itemName]];
+    [timeField setText:[item time]];
+    //[valueField setText:[NSString stringWithFormat:@"%d", [item valueInDollars]]];
 
     // Create a NSDateFormatter that will turn a date into a simple date string
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -76,9 +78,6 @@
     // Use filtered NSDate object to set dateLabel contents
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[item dateCreated]];
     [dateLabel setText:[dateFormatter stringFromDate:date]];
-
-    // Change the navigation item to display name of item
-    [[self navigationItem] setTitle:[item itemName]];
 
     NSString *imageKey = [item imageKey];
     if (imageKey) {
@@ -91,12 +90,33 @@
         // Clear the imageView
         [imageView setImage:nil];
     }
-    NSString *typeLabel = [[item assetType] valueForKey:@"label"];
-    if(!typeLabel)
-        typeLabel = @"None";
-    [assetTypeButton setTitle:[NSString stringWithFormat:@"Type: %@", typeLabel]
+    
+    // event type
+    NSString *eventTypeLabel = [[item eventType] valueForKey:@"label"];
+    if(!eventTypeLabel)
+        eventTypeLabel = @"None";
+    [eventTypeButton setTitle:[NSString stringWithFormat:@"Event: %@", eventTypeLabel]
                      forState:UIControlStateNormal];
+
+    // distance type
+    NSString *distanceTypeLabel = [[item distanceType] valueForKey:@"label"];
+    if(!distanceTypeLabel)
+        distanceTypeLabel = @"None";
+    [distanceTypeButton setTitle:[NSString stringWithFormat:@"Distance: %@", distanceTypeLabel]
+                     forState:UIControlStateNormal];
+
+    // pool type
+    NSString *poolTypeLabel = [[item poolType] valueForKey:@"label"];
+    if(!poolTypeLabel)
+        poolTypeLabel = @"None";
+    [poolTypeButton setTitle:[NSString stringWithFormat:@"Pool Type: %@", poolTypeLabel]
+                     forState:UIControlStateNormal];
+    
+    // Change the navigation item to display name of item
+    // should really check to be sure both of these are set; could get "None None"
+    [[self navigationItem] setTitle:[NSString stringWithFormat:@"%@ %@", distanceTypeLabel, eventTypeLabel]];
 }
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)io
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -105,6 +125,7 @@
         return (io == UIInterfaceOrientationPortrait);
     } 
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -132,9 +153,8 @@
     [[self view] endEditing:YES];
 
     // "Save" changes to item
-    [item setItemName:[nameField text]];
-    [item setSerialNumber:[serialNumberField text]];
-    [item setValueInDollars:[[valueField text] intValue]];
+    [item setItemName:@"fix this"];
+    [item setTime:[timeField text]];
 }
 
 - (IBAction)takePicture:(id)sender 
@@ -196,13 +216,33 @@
     NSLog(@"%@", [self presentingViewController]);
 }
 
-- (IBAction)showAssetTypePicker:(id)sender {
+- (IBAction)showEventTypePicker:(id)sender {
     [[self view] endEditing:YES];
     
-    AssetTypePicker *assetTypePicker = [[AssetTypePicker alloc] init];
-    [assetTypePicker setItem:item];
+    EventTypePicker *eventTypePicker = [[EventTypePicker alloc] init];
+    [eventTypePicker setItem:item];
     
-    [[self navigationController] pushViewController:assetTypePicker
+    [[self navigationController] pushViewController:eventTypePicker
+                                           animated:YES];
+}
+
+- (IBAction)showDistanceTypePicker:(id)sender {
+    [[self view] endEditing:YES];
+    
+    DistanceTypePicker *distanceTypePicker = [[DistanceTypePicker alloc] init];
+    [distanceTypePicker setItem:item];
+    
+    [[self navigationController] pushViewController:distanceTypePicker
+                                           animated:YES];
+}
+
+- (IBAction)showPoolTypePicker:(id)sender {
+    [[self view] endEditing:YES];
+    
+    PoolTypePicker *poolTypePicker = [[PoolTypePicker alloc] init];
+    [poolTypePicker setItem:item];
+    
+    [[self navigationController] pushViewController:poolTypePicker
                                            animated:YES];
 }
 

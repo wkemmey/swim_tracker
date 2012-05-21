@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="AssetType" syncable="YES">
+    <entity name="DistanceType" syncable="YES">
         <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="assetType" inverseEntity="Item" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="distanceType" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="EventType" syncable="YES">
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="eventType" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="imageKey" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="orderingValue" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="serialNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbnail" optional="YES" transient="YES" syncable="YES"/>
         <attribute name="thumbnailData" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="valueInDollars" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="assetType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AssetType" inverseName="items" inverseEntity="AssetType" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="distanceType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DistanceType" inverseName="items" inverseEntity="DistanceType" syncable="YES"/>
+        <relationship name="eventType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="EventType" inverseName="items" inverseEntity="EventType" syncable="YES"/>
+        <relationship name="poolType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PoolType" inverseName="items" inverseEntity="PoolType" syncable="YES"/>
+    </entity>
+    <entity name="PoolType" syncable="YES">
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="poolType" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AssetType" positionX="27" positionY="219" width="126" height="75"/>
-        <element name="Item" positionX="277" positionY="213" width="128" height="180"/>
+        <element name="EventType" positionX="90" positionY="162" width="126" height="75"/>
+        <element name="Item" positionX="277" positionY="213" width="128" height="195"/>
+        <element name="DistanceType" positionX="-9" positionY="261" width="128" height="75"/>
+        <element name="PoolType" positionX="27" positionY="360" width="128" height="75"/>
     </elements>
 </model>

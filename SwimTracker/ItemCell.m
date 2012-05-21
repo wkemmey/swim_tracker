@@ -1,8 +1,8 @@
 #import "ItemCell.h"
 
 @implementation ItemCell
-@synthesize serialNumberLabel;
-@synthesize valueLabel;
+@synthesize poolLabel;
+@synthesize timeLabel;
 @synthesize thumbnailView;
 @synthesize nameLabel;
 @synthesize controller;
