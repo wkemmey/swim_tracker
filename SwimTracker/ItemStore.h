@@ -8,6 +8,10 @@
 {
     NSMutableArray *allItems;
     NSMutableArray *allAssetTypes;
+    NSMutableArray *allDistanceTypes;
+    NSMutableArray *allEventTypes;
+    NSMutableArray *allPoolTypes;
+    
     NSManagedObjectContext *context;
     NSManagedObjectModel *model;
 }
@@ -28,6 +32,12 @@
 - (BOOL)saveChanges;
 
 - (NSArray *)allAssetTypes;
+
+- (NSArray *)allDistanceTypes;
+
+- (NSArray *)allEventTypes;
+
+- (NSArray *)allPoolTypes;
 
 - (void)loadAllItems;
 

@@ -218,4 +218,135 @@
     return allAssetTypes;
 }
 
+- (NSArray *)allDistanceTypes
+{
+    if (!allDistanceTypes) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        
+        NSEntityDescription *e = [[model entitiesByName] 
+                                  objectForKey:@"DistanceType"];
+        
+        [request setEntity:e];
+        
+        NSError *error;
+        NSArray *result = [context executeFetchRequest:request error:&error];
+        if (!result) {
+            [NSException raise:@"Fetch failed"
+                        format:@"Reason: %@", [error localizedDescription]];
+        }
+        allDistanceTypes = [result mutableCopy];
+    }
+    
+    // Is this the first time the program is being run?
+    if ([allDistanceTypes count] == 0) {
+        NSManagedObject *type;
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"DistanceType" 
+                                             inManagedObjectContext:context];
+        [type setValue:@"25" forKey:@"label"];
+        [allDistanceTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"DistanceType"  
+                                             inManagedObjectContext:context];
+        [type setValue:@"50" forKey:@"label"];
+        [allDistanceTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"DistanceType" 
+                                             inManagedObjectContext:context];
+        [type setValue:@"100" forKey:@"label"];
+        [allDistanceTypes addObject:type];
+        
+    }
+    return allDistanceTypes;
+}
+
+- (NSArray *)allEventTypes
+{
+    if (!allEventTypes) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        
+        NSEntityDescription *e = [[model entitiesByName] 
+                                  objectForKey:@"EventType"];
+        
+        [request setEntity:e];
+        
+        NSError *error;
+        NSArray *result = [context executeFetchRequest:request error:&error];
+        if (!result) {
+            [NSException raise:@"Fetch failed"
+                        format:@"Reason: %@", [error localizedDescription]];
+        }
+        allEventTypes = [result mutableCopy];
+    }
+    
+    // Is this the first time the program is being run?
+    if ([allEventTypes count] == 0) {
+        NSManagedObject *type;
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"EventType" 
+                                             inManagedObjectContext:context];
+        [type setValue:@"Freestyle" forKey:@"label"];
+        [allEventTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"EventType"  
+                                             inManagedObjectContext:context];
+        [type setValue:@"Backstroke" forKey:@"label"];
+        [allEventTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"EventType" 
+                                             inManagedObjectContext:context];
+        [type setValue:@"Breaststroke" forKey:@"label"];
+        [allEventTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"EventType" 
+                                             inManagedObjectContext:context];
+        [type setValue:@"Butterfly" forKey:@"label"];
+        [allEventTypes addObject:type];
+        
+    }
+    return allEventTypes;
+}
+
+- (NSArray *)allPoolTypes
+{
+    if (!allEventTypes) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        
+        NSEntityDescription *e = [[model entitiesByName] 
+                                  objectForKey:@"PoolType"];
+        
+        [request setEntity:e];
+        
+        NSError *error;
+        NSArray *result = [context executeFetchRequest:request error:&error];
+        if (!result) {
+            [NSException raise:@"Fetch failed"
+                        format:@"Reason: %@", [error localizedDescription]];
+        }
+        allPoolTypes = [result mutableCopy];
+    }
+    
+    // Is this the first time the program is being run?
+    if ([allPoolTypes count] == 0) {
+        NSManagedObject *type;
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"PoolType" 
+                                             inManagedObjectContext:context];
+        [type setValue:@"SCM" forKey:@"label"];
+        [allPoolTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"PoolType"  
+                                             inManagedObjectContext:context];
+        [type setValue:@"SCY" forKey:@"label"];
+        [allPoolTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"PoolType" 
+                                             inManagedObjectContext:context];
+        [type setValue:@"LCM" forKey:@"label"];
+        [allPoolTypes addObject:type];
+        
+    }
+    return allPoolTypes;
+}
+
 @end
