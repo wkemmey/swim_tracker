@@ -19,7 +19,6 @@
 		BE0E4EB0143262F300F05B13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0E4EAF143262F300F05B13 /* CoreGraphics.framework */; };
 		BE0E4EB3143262F700F05B13 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0E4EB2143262F700F05B13 /* CoreData.framework */; };
 		BE0E4EB91432646C00F05B13 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0E4EB81432646C00F05B13 /* Item.m */; };
-		BE0E4EC414326B8700F05B13 /* AssetTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0E4EC314326B8700F05B13 /* AssetTypePicker.m */; };
 		BE4E18E8140D9EB80007F01B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4E18E7140D9EB80007F01B /* UIKit.framework */; };
 		BE4E18EA140D9EB80007F01B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4E18E9140D9EB80007F01B /* Foundation.framework */; };
 		BE4E18F0140D9EB80007F01B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE4E18EE140D9EB80007F01B /* InfoPlist.strings */; };
@@ -52,8 +51,6 @@
 		BE0E4EB2143262F700F05B13 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BE0E4EB71432646C00F05B13 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = SwimTracker/Item.h; sourceTree = "<group>"; };
 		BE0E4EB81432646C00F05B13 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = SwimTracker/Item.m; sourceTree = "<group>"; };
-		BE0E4EC214326B8700F05B13 /* AssetTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetTypePicker.h; path = SwimTracker/AssetTypePicker.h; sourceTree = "<group>"; };
-		BE0E4EC314326B8700F05B13 /* AssetTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssetTypePicker.m; path = SwimTracker/AssetTypePicker.m; sourceTree = "<group>"; };
 		BE4E18E3140D9EB80007F01B /* SwimTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwimTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4E18E7140D9EB80007F01B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE4E18E9140D9EB80007F01B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,8 +116,6 @@
 				28FE95CD156A0CB5007B7E62 /* EventTypePicker.m */,
 				28FE95C8156A06C8007B7E62 /* DistanceTypePicker.h */,
 				28FE95C9156A06C8007B7E62 /* DistanceTypePicker.m */,
-				BE0E4EC214326B8700F05B13 /* AssetTypePicker.h */,
-				BE0E4EC314326B8700F05B13 /* AssetTypePicker.m */,
 				BE4E18EB140D9EB80007F01B /* SwimTracker */,
 				BE4E18E6140D9EB80007F01B /* Frameworks */,
 				BE4E18E4140D9EB80007F01B /* Products */,
@@ -241,7 +236,6 @@
 				BE0E4E9D14323F6D00F05B13 /* ItemCell.m in Sources */,
 				BE0E4EA9143246BC00F05B13 /* ImageViewController.m in Sources */,
 				BE0E4EB91432646C00F05B13 /* Item.m in Sources */,
-				BE0E4EC414326B8700F05B13 /* AssetTypePicker.m in Sources */,
 				5F437B2F1569E16600AFD69E /* SwimTracker.xcdatamodeld in Sources */,
 				28FE95CA156A06C8007B7E62 /* DistanceTypePicker.m in Sources */,
 				28FE95CE156A0CB5007B7E62 /* EventTypePicker.m in Sources */,

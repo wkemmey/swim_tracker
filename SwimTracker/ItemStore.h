@@ -7,7 +7,6 @@
 @interface ItemStore : NSObject
 {
     NSMutableArray *allItems;
-    NSMutableArray *allAssetTypes;
     NSMutableArray *allDistanceTypes;
     NSMutableArray *allEventTypes;
     NSMutableArray *allPoolTypes;
@@ -30,8 +29,6 @@
 - (NSString *)itemArchivePath;
 
 - (BOOL)saveChanges;
-
-- (NSArray *)allAssetTypes;
 
 - (NSArray *)allDistanceTypes;
 

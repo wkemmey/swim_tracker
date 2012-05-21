@@ -176,48 +176,6 @@
     return p;
 }
 
-- (NSArray *)allAssetTypes
-{
-    if (!allAssetTypes) {
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        
-        NSEntityDescription *e = [[model entitiesByName] 
-                                        objectForKey:@"AssetType"];
-        
-        [request setEntity:e];
-        
-        NSError *error;
-        NSArray *result = [context executeFetchRequest:request error:&error];
-        if (!result) {
-            [NSException raise:@"Fetch failed"
-                        format:@"Reason: %@", [error localizedDescription]];
-        }
-        allAssetTypes = [result mutableCopy];
-    }
-    
-    // Is this the first time the program is being run?
-    if ([allAssetTypes count] == 0) {
-        NSManagedObject *type;
-        
-        type = [NSEntityDescription insertNewObjectForEntityForName:@"AssetType" 
-                                             inManagedObjectContext:context];
-        [type setValue:@"Furniture" forKey:@"label"];
-        [allAssetTypes addObject:type];
-        
-        type = [NSEntityDescription insertNewObjectForEntityForName:@"AssetType"  
-                                             inManagedObjectContext:context];
-        [type setValue:@"Jewelry" forKey:@"label"];
-        [allAssetTypes addObject:type];
-
-        type = [NSEntityDescription insertNewObjectForEntityForName:@"AssetType" 
-                                             inManagedObjectContext:context];
-        [type setValue:@"Electronics" forKey:@"label"];
-        [allAssetTypes addObject:type];
-
-    }
-    return allAssetTypes;
-}
-
 - (NSArray *)allDistanceTypes
 {
     if (!allDistanceTypes) {
