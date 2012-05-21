@@ -4,14 +4,15 @@
 @implementation Item
 
 @dynamic itemName;
-@dynamic valueInDollars;
 @dynamic thumbnailData;
 @dynamic imageKey;
-@dynamic serialNumber;
+@dynamic time;
 @dynamic dateCreated;
 @dynamic thumbnail;
 @dynamic orderingValue;
-@dynamic assetType;
+@dynamic eventType;
+@dynamic distanceType;
+@dynamic poolType;
 
 - (void)awakeFromFetch
 {
