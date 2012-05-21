@@ -39,7 +39,7 @@
     [[cell textLabel] setText:assetLabel];
     
     // Checkmark the one that is currently selected
-    if (assetType == [item assetType]) {
+    if (assetType == [item distanceType]) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     } else {
         [cell setAccessoryType:UITableViewCellAccessoryNone];
@@ -57,7 +57,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)ip
     
     NSArray *allAssets = [[ItemStore sharedStore] allDistanceTypes];
     NSManagedObject *assetType = [allAssets objectAtIndex:[ip row]];
-    [item setAssetType:assetType];
+    [item setDistanceType:assetType];
     
     [[self navigationController] popViewControllerAnimated:YES];
 }

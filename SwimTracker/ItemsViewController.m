@@ -140,9 +140,26 @@
     [cell setController:self];
     [cell setTableView:tableView];
 
-    [[cell nameLabel] setText:[p itemName]];
-    [[cell serialNumberLabel] setText:[p serialNumber]];
-    [[cell valueLabel] setText:[NSString stringWithFormat:@"$%d", [p valueInDollars]]];
+    // name
+    
+    NSString *eventTypeLabel = [[p eventType] valueForKey:@"label"];
+    if(!eventTypeLabel)
+        eventTypeLabel = @"None";
+    
+    NSString *distanceTypeLabel = [[p distanceType] valueForKey:@"label"];
+    if(!distanceTypeLabel)
+        distanceTypeLabel = @"None";
+    
+    [[cell nameLabel] setText:[NSString stringWithFormat:@"%@ %@", distanceTypeLabel, eventTypeLabel]];
+    
+    // time
+    [[cell timeLabel] setText:[p time]];
+    
+    // pool type
+    NSString *poolTypeLabel = [[p poolType] valueForKey:@"label"];
+    if(!poolTypeLabel)
+        poolTypeLabel = @"None";
+    [[cell poolLabel] setText:[NSString stringWithFormat:@"%@", poolTypeLabel]];
     
     [[cell thumbnailView] setImage:[p thumbnail]];
 

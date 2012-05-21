@@ -39,7 +39,7 @@
     [[cell textLabel] setText:assetLabel];
     
     // Checkmark the one that is currently selected
-    if (assetType == [item assetType]) {
+    if (assetType == [item eventType]) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     } else {
         [cell setAccessoryType:UITableViewCellAccessoryNone];
@@ -57,7 +57,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)ip
     
     NSArray *allAssets = [[ItemStore sharedStore] allEventTypes];
     NSManagedObject *assetType = [allAssets objectAtIndex:[ip row]];
-    [item setAssetType:assetType];
+    [item setEventType:assetType];
     
     [[self navigationController] popViewControllerAnimated:YES];
 }
