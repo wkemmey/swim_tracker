@@ -33,12 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		28FE95C8156A06C8007B7E62 /* DistanceTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceTypePicker.h; sourceTree = "<group>"; };
-		28FE95C9156A06C8007B7E62 /* DistanceTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceTypePicker.m; sourceTree = "<group>"; };
-		28FE95CC156A0CB5007B7E62 /* EventTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypePicker.h; sourceTree = "<group>"; };
-		28FE95CD156A0CB5007B7E62 /* EventTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypePicker.m; sourceTree = "<group>"; };
-		28FE95CF156A0DC2007B7E62 /* PoolTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolTypePicker.h; sourceTree = "<group>"; };
-		28FE95D0156A0DC2007B7E62 /* PoolTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoolTypePicker.m; sourceTree = "<group>"; };
+		28FE95C8156A06C8007B7E62 /* DistanceTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DistanceTypePicker.h; path = SwimTracker/DistanceTypePicker.h; sourceTree = "<group>"; };
+		28FE95C9156A06C8007B7E62 /* DistanceTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DistanceTypePicker.m; path = SwimTracker/DistanceTypePicker.m; sourceTree = "<group>"; };
+		28FE95CC156A0CB5007B7E62 /* EventTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventTypePicker.h; path = SwimTracker/EventTypePicker.h; sourceTree = "<group>"; };
+		28FE95CD156A0CB5007B7E62 /* EventTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventTypePicker.m; path = SwimTracker/EventTypePicker.m; sourceTree = "<group>"; };
+		28FE95CF156A0DC2007B7E62 /* PoolTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PoolTypePicker.h; path = SwimTracker/PoolTypePicker.h; sourceTree = "<group>"; };
+		28FE95D0156A0DC2007B7E62 /* PoolTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PoolTypePicker.m; path = SwimTracker/PoolTypePicker.m; sourceTree = "<group>"; };
 		5F437B2E1569E16600AFD69E /* SwimTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwimTracker.xcdatamodel; sourceTree = "<group>"; };
 		BE0B750114191AEE00118DD7 /* ImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageStore.h; path = SwimTracker/ImageStore.h; sourceTree = "<group>"; };
 		BE0B750214191AEE00118DD7 /* ImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageStore.m; path = SwimTracker/ImageStore.m; sourceTree = "<group>"; };
