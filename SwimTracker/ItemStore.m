@@ -267,7 +267,7 @@
 
 - (NSArray *)allPoolTypes
 {
-    if (!allEventTypes) {
+    if (!allPoolTypes) {
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         
         NSEntityDescription *e = [[model entitiesByName] 
